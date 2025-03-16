@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Edit, Save, Trash, Plus } from "lucide-react";
+import { Save, Trash, Plus } from "lucide-react";
 
 const EditorPanel = () => {
   const [content, setContent] = useState("");

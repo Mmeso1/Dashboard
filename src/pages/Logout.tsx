@@ -11,12 +11,17 @@ const Logout = () => {
     navigate("/dashboard", { replace: true });
   };
   return (
-    <>
+    <div className="flex flex-col gap-7 p-6 mt-10">
       <h1>Aww... so sad to let you go!</h1>{" "}
       <button onClick={handleLogout}>
-        <Link to="/logout">Log Out</Link>
+        <Link
+          to="/logout"
+          className="p-3 border-gray-400 bg-green-400 rounded-lg"
+        >
+          Log Out
+        </Link>
       </button>{" "}
-    </>
+    </div>
   );
 };
 

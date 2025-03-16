@@ -1,6 +1,7 @@
 import { useAuth } from "../utils/Auth";
 import AdminDashboard from "../components/Admin";
 import EditorPanel from "../components/Editor";
+import ViewerPanel from "../components/Viewer";
 
 const Dashboard = () => {
   const { role } = useAuth();
@@ -9,7 +10,7 @@ const Dashboard = () => {
   } else if (role === "editor") {
     return <EditorPanel />;
   }
-  return null;
+  return <ViewerPanel />;
 };
 
 export default Dashboard;

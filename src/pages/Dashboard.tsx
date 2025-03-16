@@ -1,15 +1,9 @@
 import { useAuth } from "../utils/Auth";
+import AdminDashboard from "../components/Admin";
 
 const Dashboard = () => {
-  const { user, role } = useAuth();
-  return (
-    <>
-      <div>Dashboard</div>
-
-      <div>Welcome {user}</div>
-      <div>You are a {role}</div>
-    </>
-  );
+  const { role } = useAuth();
+  return <>{role === "admin" && <AdminDashboard />}</>;
 };
 
 export default Dashboard;

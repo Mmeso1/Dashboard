@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# Simple Dashboard Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple web application built to learn more about **routing** and **hooks** in **React.js**.
 
-Currently, two official plugins are available:
+## Hooks Implemented
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `useState`
+- `useContext`
+- `useEffect`
+- `useNavigate`
 
-## Expanding the ESLint configuration
+## User Roles
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Admin**: Login with the username `'Admin'`
+- **Editor**: Login with the username `'Editor'`
+- **Viewer**: Login with any name of your choice.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Protected Routes**: Different pages are only accessible based on user roles.
+- **Conditional Rendering**: Renders different content for Admin, Editor, and Viewer.
+  - Admin: Admin controls
+  - Editor: Content editor panel
+  - Viewer: Read-only reports
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## How To Use
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. **Login**:
+   - Enter one of the following usernames based on your role:
+     - `'Admin'` for Admin access
+     - `'Editor'` for Editor access
+     - Any other name for Viewer access
+2. **Access Pages**:
+   - **Dashboard**: Accessible to all roles, displays role-specific content.
+   - **Profile**: Accessible only when logged in.
+   - **Settings**: Accessible only to Admins.
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd <project-directory>
+   ```
+
+3. Install Dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```

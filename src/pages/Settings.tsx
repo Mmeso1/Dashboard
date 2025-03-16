@@ -6,7 +6,7 @@ const Settings = () => {
   useEffect(() => {
     if (role !== "admin") {
       const timer = setTimeout(() => {
-        window.location.href = "/login";
+        window.location.href = "/logout";
       }, 2000);
       return () => clearTimeout(timer);
     }

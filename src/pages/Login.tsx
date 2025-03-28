@@ -32,12 +32,6 @@ const Login = () => {
 
         {/* Username Input */}
         <div className="flex flex-col gap-2 items-start w-full poppins-normal">
-          {/* <label
-            htmlFor="username"
-            className="text-xl font-medium text-gray-700"
-          >
-            Username
-          </label> */}
           <input
             type="text"
             id="username"

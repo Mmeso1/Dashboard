@@ -20,21 +20,24 @@ const ViewerPanel = () => {
   return (
     <div className="flex flex-col items-center h-[80vh] p-8">
       {/* Header */}
-      <h2 className="text-3xl font-bold text-black mb-6 flex items-center gap-2">
-        Viewer Dashboard
-      </h2>
+      <header className="mb-8 text-center">
+        <h1 className="text-3xl font-bold text-green-600">
+          Welcome to Your Dashboard
+        </h1>
+        <p className="text-gray-600">
+          Discover insightful articles curated just for you.
+        </p>
+      </header>
 
       {/* Articles Container */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
         {articles.map((article, index) => (
           <div
             key={index}
-            className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:scale-105 transition"
+            className=" p-6 border border-green-100 rounded-xl shadow-md hover:shadow-lg transition cursor-pointer"
           >
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {article.title}
-            </h3>
-            <p className="text-gray-300 text-sm">{article.content}</p>
+            <h3 className="text-lg font-semibold">{article.title}</h3>
+            <p className="text-gray-700 text-sm mt-2">{article.content}</p>
           </div>
         ))}
       </div>

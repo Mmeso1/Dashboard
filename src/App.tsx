@@ -53,14 +53,16 @@ function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/settings"
-            style={({ isActive }) => ({
-              color: isActive ? "#538000" : "#333000",
-            })}
-          >
-            Settings
-          </NavLink>
+          {role === "admin" && (
+            <NavLink
+              to="/settings"
+              style={({ isActive }) => ({
+                color: isActive ? "#538000" : "#333000",
+              })}
+            >
+              Settings
+            </NavLink>
+          )}
         </li>
       </ul>
       <div>

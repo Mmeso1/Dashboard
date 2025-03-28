@@ -11,47 +11,40 @@ function Navbar() {
   return (
     <nav>
       <ul>
-        <li>
-          {user ? (
-            <NavLink
-              to="/logout"
-              style={({ isActive }) => ({
-                color: isActive ? "#538000" : "#333000",
-              })}
-            >
-              Logout
-            </NavLink>
-          ) : (
-            <NavLink
-              to="/login"
-              style={({ isActive }) => ({
-                color: isActive ? "#538000" : "#333000",
-              })}
-            >
-              Login
-            </NavLink>
-          )}
-        </li>
-        <li>
-          <NavLink
-            to="/dashboard"
-            style={({ isActive }) => ({
-              color: isActive ? "#538000" : "#333000",
-            })}
-          >
-            Dashboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/profile"
-            style={({ isActive }) => ({
-              color: isActive ? "#538000" : "#333000",
-            })}
-          >
-            Profile
-          </NavLink>
-        </li>
+        {user && (
+          <>
+            <li>
+              <NavLink
+                to="/logout"
+                style={({ isActive }) => ({
+                  color: isActive ? "#538000" : "#333000",
+                })}
+              >
+                Logout
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/dashboard"
+                style={({ isActive }) => ({
+                  color: isActive ? "#538000" : "#333000",
+                })}
+              >
+                Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/profile"
+                style={({ isActive }) => ({
+                  color: isActive ? "#538000" : "#333000",
+                })}
+              >
+                Profile
+              </NavLink>
+            </li>
+          </>
+        )}
         <li>
           {role === "admin" && (
             <NavLink

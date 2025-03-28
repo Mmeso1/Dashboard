@@ -3,6 +3,7 @@ import { Login, Dashboard, Profile, Settings, Logout } from "./pages";
 import { AuthProvider, useAuth } from "./utils/Auth";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import "./App.css";
+import "./index.css";
 
 function Navbar() {
   const { user, role } = useAuth();

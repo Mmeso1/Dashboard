@@ -3,7 +3,7 @@ import { useState, useContext, createContext, ReactNode } from "react";
 interface AuthContextTypes {
   user: string | null;
   role: string;
-  login: (username: string) => void;
+  login: (username: string, role: string) => void;
   logout: () => void;
 }
 const AuthContext = createContext<AuthContextTypes | undefined>(undefined);
@@ -13,12 +13,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [user, setUser] = useState<string | null>("");
   const [role, setRole] = useState<string>("");
-  const login = (username: string) => {
+  const login = (username: string, role: string) => {
     setUser(username);
 
-    if (username === "Editor") {
+    if (role === "editor") {
       setRole("editor");
-    } else if (username === "Admin") {
+    } else if (role === "admin") {
       setRole("admin");
     } else {
       setRole("viewer");
